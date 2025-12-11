@@ -28,7 +28,13 @@ async function deleteItem(userCart, name) {
 }
 
 // remove item
-async function removeitem(userCart, index) {}
+async function removeItem(userCart, index) {
+  const deleteIndex = index - 1;
+
+  if(index >= 0 && index < userCart.length) {
+    userCart.splice(deleteIndex, 1);
+  }
+}
 
 async function displayCart(userCart) {
   console.log("Shopee cart list:");
@@ -41,4 +47,4 @@ async function displayCart(userCart) {
   });
 }
 
-export { addItem, caltulateTotal, deleteItem, removeitem, displayCart };
+export { addItem, caltulateTotal, deleteItem, removeItem, displayCart };
